@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/aussiegeek/astro.svg?branch=master)](https://travis-ci.org/aussiegeek/astro)
+
 # Astro
 
 Calculate sunrise & sunset for given location. 
