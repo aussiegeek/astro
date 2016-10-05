@@ -6,9 +6,7 @@ defmodule AstroTest do
     abs(val1 - val2) < margin
   end
     
-  @date  %DateTime{calendar: Calendar.ISO, day: 5, hour: 0,  minute: 0,
-                month: 3, second: 0, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0,
-                year: 2013, zone_abbr: "UTC"}
+  @date ~D[2013-03-05]
   @lat 50.5
   @lng 30.5
 

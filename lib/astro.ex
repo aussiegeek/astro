@@ -8,7 +8,7 @@ defmodule Astro do
   @j1970 2440588
   @j2000 2451545
 
-  defp to_julian(date), do: DateTime.to_unix(date, :milliseconds) / @day_ms - 0.5 + @j1970
+  defp to_julian(date), do: (Timex.to_datetime(date) |> Timex.to_julian) - 0.9
   defp from_julian(j) do
     {:ok, dt} = DateTime.from_unix(round((j + 0.5 - @j1970) * @day_ms), :milliseconds)
     %{dt | microsecond: {0,0}}
@@ -106,7 +106,7 @@ defmodule Astro do
 
 
   # calculates sun times for a given date and latitude/longitude
-  def get_times(lat, lng), do: get_times(DateTime.utc_now, lat, lng)
+  def get_times(lat, lng), do: get_times(Timex.today, lat, lng)
   def get_times(date, lat, lng) do
     lw = @rad * -lng
     phi = @rad * lat
