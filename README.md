@@ -6,7 +6,7 @@ Calculate sunrise & sunset for given location.
 
 ```
 
-Astro.get_times(DateTime.utc_now, -39.8, 144.96)
+Astro.get_times(-39.8, 144.96)
 
 # Result
 
